@@ -1,0 +1,188 @@
+/* Riverlab Native Notify System */
+:root {
+    --color-004: #ffbe63;
+    --color-006: #181829;
+}
+
+.riverlab_native_notify_system {
+    position: fixed;
+    bottom: -500px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999998;
+    width: 500px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, .5);
+    background: var(--color-006);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 6px;
+}
+.riverlab_native_notify_system.show {
+    animation: linear .6s nativeNotifyToTop forwards;
+}
+.riverlab_native_notify_system.hide {
+    animation: linear .6s nativeNotifyToDown forwards;
+}
+@keyframes nativeNotifyToTop {
+    to {
+        bottom: 40px;
+    }
+}
+@keyframes nativeNotifyToDown {
+    from {
+        bottom: 20px;
+    }
+    to {
+        bottom: -500px;
+    }
+}
+.RNNS_left {
+    width: calc(100% - 90px);
+    word-break: break-word;
+}
+.RNNS_right {
+    width: 80px;
+}
+.RNNS_close {
+    width: 80px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    background: transparent;
+    border: 2px solid var(--color-004);
+    color: var(--color-004);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s all ease;
+}
+.RNNS_close:hover {
+    background: var(--color-004);
+    color: var(--color-006);
+}
+.riverlab_native_notify_system.confirm .RNNS_left {
+    width: calc(100% - 210px);
+}
+.riverlab_native_notify_system.confirm .RNNS_right {
+    display: flex;
+    width: 200px;
+}
+.riverlab_native_notify_system.confirm .RNNS_right .RNNS_close {
+    background: #e74c3c;
+    margin-right: 10px;
+}
+.riverlab_native_notify_system.confirm .RNNS_right .RNNS_close:hover {
+    background: #c0392b;
+}
+.RNNS_confirm {
+    width: 120px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: .2s all ease;
+    background: #2ecc71;
+}
+.RNNS_confirm:hover {
+    background: #27ae60;
+}
+.RNNS_header {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-004);
+}
+.RNNS_content {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--color-004);
+}
+.riverlab_native_notify_system.success .RNNS_content {
+    color: #fff;
+}
+.riverlab_native_notify_system.alert .RNNS_header {
+    color: var(--color-006);
+}
+.riverlab_native_notify_system.alert .RNNS_content {
+    color: var(--color-006)
+}
+.riverlab_native_notify_system.error .RNNS_content {
+    color: #fff;
+}
+.riverlab_native_notify_system.success {
+    background: #27ae60;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(39, 174, 96, .56);
+    justify-content: center;
+    text-align: center;
+}
+.riverlab_native_notify_system.success .RNNS_close {
+    background: #ecf0f1;
+    color: #2ecc71;
+}
+.riverlab_native_notify_system.success .RNNS_close:hover {
+    color: #27ae60;
+}
+.riverlab_native_notify_system.success .RNNS_header,
+.riverlab_native_notify_system.error .RNNS_header {
+    color: #fff;
+    text-transform: capitalize;
+}
+.riverlab_native_notify_system.alert {
+    background: var(--color-004);
+    color: #fff;
+    box-shadow: 0 0 10px rgba(255, 190, 99, .35);
+}
+.riverlab_native_notify_system.alert .RNNS_close {
+    background: transparent;
+    color: var(--color-006);
+    border-color: var(--color-006);
+}
+.riverlab_native_notify_system.alert .RNNS_close:hover {
+    background: var(--color-006);
+    color: var(--color-004);
+}
+.riverlab_native_notify_system.error {
+    background: #c0392b;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(192, 57, 43, .52);
+}
+.riverlab_native_notify_system.error .RNNS_close {
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+}
+.riverlab_native_notify_system.error .RNNS_close:hover {
+    color: #c0392b;
+    background: #fff;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .riverlab_native_notify_system {
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none!important;
+    }
+    @keyframes nativeNotifyToTop {
+        to {
+            bottom: 0;
+        }
+    }
+    @keyframes nativeNotifyToDown {
+        from {
+            bottom: 0;
+        }
+        to {
+            top: 100%;
+        }
+    }
+}
