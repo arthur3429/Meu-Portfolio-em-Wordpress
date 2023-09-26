@@ -22,6 +22,8 @@ O tema WordPress do meu portfólio inclui as seguintes funcionalidades:
 
 - **Responsividade**: O tema é totalmente responsivo, garantindo uma ótima experiência em dispositivos móveis.
 
+- **Light e Dark Mode**: O tema conta com modo claro e escuro, que é detectado automáticamente pelo site ou segue a preferência definida no menu pelo usuário.
+
 ## Como Usar
 
 Para usar este tema WordPress, siga estas etapas:
